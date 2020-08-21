@@ -1,22 +1,19 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const path = require('path');
 
-module.exports = {
+const path = require('path');
+const common = require("./webpack.common");
+const { merge } = require("webpack-merge");
+
+module.exports = merge(common,{
   mode: 'development',
-  devtool: "none", // use to remove eval function from bundle.js file
-  entry: path.join(__dirname, 'src', 'index'),
   watch: true,
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/dist/',
-    filename: "bundle.[contenthash].js",
+    filename: "bundle.js",
     chunkFilename: '[name].js'
   },
 
-  plugins: [
-    new CleanWebpackPlugin(), // help to clean dist folder generating new file with hash. This keeps one hash file with new generated hash
-          
-     ],
+ 
 
   module: {
     rules: [{
@@ -62,4 +59,4 @@ module.exports = {
   //   extensions: ['.json', '.js', '.jsx']
   // }
  
-};
+});

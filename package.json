@@ -15,7 +15,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "wbpk": "webpack"
+    "wbpk": "webpack --config webpack.dev.js",
+    "wbpk-prod": "webpack --config webpack.prod.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,6 +45,7 @@
     "style-loader": "1.2.1",
     "webpack": "4.42.0",
     "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "5.1.2"
   }
 }
