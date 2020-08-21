@@ -30,10 +30,32 @@ module.exports = {
           }]
         ]
       }
-    }]
+    },
+
+    // es-lint-configuration: https://webpack.js.org/loaders/eslint-loader/
+
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: ['babel-loader', 'eslint-loader'],
+    },
+
+    {
+      enforce: 'pre',
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'eslint-loader',
+    },
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+    }
+  
+  ]
   },
-  resolve: {
-    extensions: ['.json', '.js', '.jsx']
-  }
+  // resolve: {
+  //   extensions: ['.json', '.js', '.jsx']
+  // }
  
 };
