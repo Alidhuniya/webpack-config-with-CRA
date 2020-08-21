@@ -8,7 +8,7 @@ module.exports = merge(common,  {
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/dist/',
-    filename: "bundle.[contenthash].js",
+    filename: "[name].[contenthash].bundle.js",
     chunkFilename: '[name].js'
   },
  
