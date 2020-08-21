@@ -1,3 +1,4 @@
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -8,9 +9,15 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/dist/',
-    filename: "bundle.js",
+    filename: "bundle.[contenthash].js",
     chunkFilename: '[name].js'
   },
+
+  plugins: [
+    new CleanWebpackPlugin(), // help to clean dist folder generating new file with hash. This keeps one hash file with new generated hash
+          
+     ],
+
   module: {
     rules: [{
       test: /.jsx?$/,
