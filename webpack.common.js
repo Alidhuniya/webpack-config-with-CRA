@@ -1,4 +1,5 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const path = require('path');
 
 module.exports = {
@@ -12,7 +13,6 @@ module.exports = {
  
   plugins: [
     new CleanWebpackPlugin(), // help to clean dist folder generating new file with hash. This keeps one hash file with new generated hash
-          
      ],
 
   module: {
@@ -36,22 +36,7 @@ module.exports = {
       }
     },
     
-    {
-      test: /\.css$/i,
-      use: ['style-loader', 'css-loader'],
-    },
-
-     {
-        test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
-      },
+    
 
       {
 
